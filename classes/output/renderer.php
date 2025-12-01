@@ -2769,7 +2769,7 @@ class renderer extends plugin_renderer_base {
         foreach ($reportdata->users as $user) {
             $row = new html_table_row();
             if ($showsessiondetails && !empty($reportdata->sessions)) {
-                $cellsgenerator = new user_sessions_cells_html_generator($reportdata, $user);
+                $cellsgenerator = new user_sessions_cells_html($reportdata, $user);
                 foreach ($cellsgenerator->get_cells(true) as $cell) {
                     if ($cell instanceof html_table_cell) {
                         $cell->attributes['class'] .= ' center';
